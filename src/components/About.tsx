@@ -99,9 +99,9 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-12"
+          className="mb-12 flex justify-center"
         >
-          <p className="text-gray-400 mb-12 max-w-3xl">
+          <p className="text-gray-400 mb-12 max-w-3xl text-justify">
             Tenho experiência prática com as principais tecnologias de
             desenvolvimento web, incluindo HTML5, CSS3, e JavaScript, além de
             frameworks e plataformas como Bootstrap, React, NodeJS, PHP, Java,
@@ -111,26 +111,26 @@ export default function About() {
             atendem perfeitamente as necessidades dos meus clientes, seja em
             projetos simples ou em soluções complexas e personalizadas.
           </p>
-
-          <div className="grid grid-cols-3 md:grid-cols-9 gap-8 mb-20">
-            {skills.map((skill) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="flex flex-col items-center"
-              >
-                <img
-                  src={skill.icon}
-                  alt={skill.name}
-                  className="w-16 h-16 mb-2"
-                />
-                <span className="text-white text-sm">{skill.name}</span>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
+
+        <div className="grid grid-cols-3 md:grid-cols-9 gap-8 mb-20">
+          {skills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center"
+            >
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                className="w-16 h-16 mb-2"
+              />
+              <span className="text-white text-sm">{skill.name}</span>
+            </motion.div>
+          ))}
+        </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
