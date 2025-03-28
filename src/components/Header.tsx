@@ -16,7 +16,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="text-white text-2xl font-bold"
           >
-            RM Developer
+            
           </motion.div>
 
           {/* Desktop Menu */}

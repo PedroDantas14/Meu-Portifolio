@@ -55,7 +55,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-white text-3xl font-bold mb-6">
-              Olá, me chamo Ricardo Moura
+              Olá, me chamo Pedro Henrique
             </h2>
             <p className="text-gray-400 mb-6">
               Sou desenvolvedor web freelancer e empreendedor digital. Com mais de 4

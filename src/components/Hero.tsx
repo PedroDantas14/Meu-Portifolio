@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Smartphone, Layout } from 'lucide-react';
+import { Github, Linkedin, Instagram } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-6xl md:text-8xl font-bold text-white mb-6"
         >
-          RICARDO MOURA
+          PEDRO HENRIQUE
         </motion.h1>
 
         <motion.h2
@@ -20,7 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-4xl md:text-6xl font-light text-white mb-8"
         >
-          Desenvolvedor <span className="text-blue-500">F</span>
+          Desenvolvedor <span className="text-blue-500">Full Stack</span>
         </motion.h2>
 
         <motion.div
@@ -30,28 +30,34 @@ export default function Hero() {
           className="flex justify-center space-x-6 mb-12"
         >
           <motion.a
-            href="#"
+            href="https://github.com/PedroDFinformatica?tab=repositories"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="text-white hover:text-gray-300 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Code2 size={32} />
+            <Github size={32} />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://www.linkedin.com/in/pedro-alves-37bab9357/"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="text-white hover:text-gray-300 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Smartphone size={32} />
+            <Linkedin size={32} />
           </motion.a>
           <motion.a
-            href="#"
+            href="https://www.instagram.com/srpedro12_?igsh=ajl0NW4xenFtdnBo"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="text-white hover:text-gray-300 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Layout size={32} />
+            <Instagram size={32} />
           </motion.a>
         </motion.div>
 
@@ -61,12 +67,6 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex justify-center space-x-4"
         >
-          <a
-            href="#portfolio"
-            className="bg-blue-500 text-white px-8 py-3 rounded-full hover:bg-blue-600 transition-colors"
-          >
-            Ver Portfólio
-          </a>
           <a
             href="#contato"
             className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors"
