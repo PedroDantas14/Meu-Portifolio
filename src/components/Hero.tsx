@@ -68,8 +68,10 @@ export default function Hero() {
           className="flex justify-center space-x-4"
         >
           <a
-            href="#contato"
+            href="https://wa.me/5561992715006?text=Ol%C3%A1."
             className="border border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Contato
           </a>
