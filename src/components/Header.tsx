@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = ['Home', 'Sobre', 'Serviços', 'Projetos', 'Blog', 'Contato'];
+  const menuItems = ['Home', 'Sobre', 'Projetos', 'Contato'];
 
   return (
     <header className="fixed w-full z-50 bg-black/50 backdrop-blur-sm">

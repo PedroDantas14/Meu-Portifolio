@@ -14,12 +14,11 @@ const skills: Skill[] = [
   { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { name: "Javascript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
   { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+  { name: "Laravel", icon: "https://devicon-website.vercel.app/api/laravel/plain.svg" },
   { name: "NodeJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
   { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
 ];
 
 const softSkills: SoftSkill[] = [
@@ -58,16 +57,12 @@ export default function About() {
               Olá, me chamo Pedro Henrique
             </h2>
             <p className="text-gray-400 mb-6">
-              Sou desenvolvedor web freelancer e empreendedor digital. Com mais de 4
-              anos de experiência, tenho um histórico comprovado de transformar
-              ideias em soluções digitais eficazes. Além disso, sou criador de conteúdo
-              no TikTok, onde ensino e inspiro pessoas a explorarem o freelancing como
-              uma carreira viável ou uma fonte de renda extra.
+            Sou desenvolvedor Full Stack com dois anos de experiência na área de tecnologia. Minha trajetória começou no suporte técnico, onde tive a oportunidade de desenvolver minhas habilidades e, com o tempo, evoluí para a programação.
+
+Sou formado em Análise e Desenvolvimento de Sistemas e atualmente sou estagiário na DF Informática, onde adquiri experiência prática com diversas linguagens e tecnologias. Sempre em busca de aprimoramento, estou estudando Java para expandir meus conhecimentos e continuar evoluindo na carreira.
             </p>
             <p className="text-gray-400">
-              Atualmente, estou cursando Engenharia de Software para aprofundar
-              ainda mais meus conhecimentos. Se você está buscando um parceiro
-              para levar seu negócio online ao próximo nível, vamos conversar!
+            Minha paixão pela tecnologia me motiva a aprender continuamente e a enfrentar novos desafios, sempre em busca de inovação e crescimento profissional.
             </p>
           </motion.div>
           
@@ -102,14 +97,11 @@ export default function About() {
           className="mb-12 flex justify-center"
         >
           <p className="text-gray-400 mb-12 max-w-3xl text-justify">
-            Tenho experiência prática com as principais tecnologias de
-            desenvolvimento web, incluindo HTML5, CSS3, e JavaScript, além de
-            frameworks e plataformas como Bootstrap, React, NodeJS, PHP, Java,
-            Figma, WordPress, Wix e Shopify. Essas ferramentas me permitem criar
-            sites que são não só visualmente atraentes, mas também otimizados para
-            desempenho e funcionalidade. Me dedico a desenvolver soluções web que
-            atendem perfeitamente as necessidades dos meus clientes, seja em
-            projetos simples ou em soluções complexas e personalizadas.
+          Front-end: Possuo experiência avançada com HTML e CSS, garantindo interfaces responsivas e bem estruturadas. Além disso, utilizo JavaScript para tornar as aplicações mais dinâmicas e interativas. Tenho conhecimentos básicos em React, o que me permite criar componentes reutilizáveis e escaláveis.
+
+Back-end: Desenvolvo aplicações utilizando PHP, linguagem na qual tenho experiência avançada. Também possuo conhecimentos em Laravel, que facilita a criação de sistemas robustos e bem estruturados. Além disso, já trabalhei com Node.js, ampliando minha capacidade de desenvolvimento para o lado do servidor.
+
+Criação de Aplicativos: Utilizo o FlutterFlow para desenvolver aplicativos móveis de forma eficiente, explorando a praticidade da ferramenta para criar experiências fluidas e intuitiva
           </p>
         </motion.div>
 
