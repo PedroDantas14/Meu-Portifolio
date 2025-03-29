@@ -31,7 +31,6 @@ const softSkills: SoftSkill[] = [
   { name: "Detalhismo" },
   { name: "Crítica" },
   { name: "Criatividade" },
-  { name: "Autodidatismo" },
 ];
 
 export default function About() {

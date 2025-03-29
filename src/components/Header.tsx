@@ -24,10 +24,12 @@ export default function Header() {
             {menuItems.map((item) => (
               <motion.a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={item.toLowerCase() === 'contato' ? 'https://wa.me/5561992715006?text=Ol%C3%A1.' : `#${item.toLowerCase()}`}
                 className="text-white hover:text-blue-400 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                target={item.toLowerCase() === 'contato' ? '_blank' : undefined}
+                rel={item.toLowerCase() === 'contato' ? 'noopener noreferrer' : undefined}
               >
                 {item}
               </motion.a>
@@ -55,9 +57,11 @@ export default function Header() {
             {menuItems.map((item) => (
               <a
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={item.toLowerCase() === 'contato' ? 'https://wa.me/5561992715006?text=Ol%C3%A1.' : `#${item.toLowerCase()}`}
                 className="block text-white hover:text-blue-400 transition-colors"
                 onClick={() => setIsOpen(false)}
+                target={item.toLowerCase() === 'contato' ? '_blank' : undefined}
+                rel={item.toLowerCase() === 'contato' ? 'noopener noreferrer' : undefined}
               >
                 {item}
               </a>
