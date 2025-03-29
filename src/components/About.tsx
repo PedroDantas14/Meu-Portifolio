@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import profileImage from '../assets/img/pedro.jpeg';
 
 interface Skill {
   name: string;
@@ -73,9 +74,10 @@ Sou formado em Análise e Desenvolvimento de Sistemas e atualmente sou estagiár
             className="relative aspect-video"
           >
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
-              alt="Developer working"
+              src={profileImage}
+              alt="Pedro Henrique"
               className="rounded-lg w-full h-full object-cover"
+              style={{ height: '465px' }}
             />
           </motion.div>
         </div>
