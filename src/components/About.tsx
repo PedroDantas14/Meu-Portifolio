@@ -59,12 +59,12 @@ export default function About() {
             <h2 className="text-white text-3xl font-bold mb-6">
               Olá, me chamo Pedro Henrique
             </h2>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-6 text-justify">
             Sou desenvolvedor Full Stack com dois anos de experiência na área de tecnologia. Minha trajetória começou no suporte técnico, onde tive a oportunidade de desenvolver minhas habilidades e, com o tempo, evoluí para a programação.
 
 Sou formado em Análise e Desenvolvimento de Sistemas e atualmente sou estagiário na DF Informática, onde adquiri experiência prática com diversas linguagens e tecnologias. Sempre em busca de aprimoramento, estou estudando Java para expandir meus conhecimentos e continuar evoluindo na carreira.
             </p>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-justify">
             Minha paixão pela tecnologia me motiva a aprender continuamente e a enfrentar novos desafios, sempre em busca de inovação e crescimento profissional.
             </p>
           </motion.div>
