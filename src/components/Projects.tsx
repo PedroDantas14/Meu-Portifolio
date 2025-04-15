@@ -11,28 +11,12 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Copfy",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-    categories: ["Blog", "E-Commerce", "Institucional"],
-    description: "Portal completo que reúne um blog informativo, uma plataforma de vendas online e um diretório de serviços, tudo em um único ambiente.",
-    technologies: ["HTML", "CSS", "JavaScript", "WordPress"],
-    link: "#"
-  },
-  {
-    title: "Helo Fernandes",
-    image: "https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=2670&auto=format&fit=crop",
-    categories: ["E-Commerce"],
-    description: "Desenvolvido como uma joalheria online, este site exibe as joias elegantes de Helo Fernandes, oferecendo uma experiência de compra luxuosa e intuitiva.",
-    technologies: ["HTML", "CSS", "JavaScript", "Wix"],
-    link: "#"
-  },
-  {
-    title: "Freelancer de Sucesso",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
-    categories: ["Landing Page"],
-    description: "Este site fornece recursos essenciais e guias práticos para freelancers, oferecendo uma experiência enriquecedora e motivadora para alcançar a liberdade profissional.",
-    technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-    link: "#"
+    title: "EscapeAway Journey",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    categories: ["Portal de Viagens"],
+    description: "O EscapeAway é o seu portal completo para planejar viagens inesquecíveis! Encontre destinos turísticos, opções de hospedagem e pacotes promocionais.\n\nObs: Este projeto foi desenvolvido com a ajuda de inteligência artificial.",
+    technologies: ["react", "typescript", "tailwindcss"],
+    link: "https://projeto-escapeaway-journey.netlify.app"
   }
 ];
 
@@ -99,6 +83,8 @@ export default function Projects() {
 
                 <a
                   href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block w-full text-center bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition-colors"
                 >
                   ACESSE O SITE
