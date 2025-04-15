@@ -15,11 +15,14 @@ const skills: Skill[] = [
   { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { name: "Javascript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
   { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
-  { name: "Laravel", icon: "https://devicon-website.vercel.app/api/laravel/plain.svg" },
-  { name: "NodeJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
+  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
   { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+  { name: "FlutterFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+  { name: "NodeJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
 ];
 
 const softSkills: SoftSkill[] = [
@@ -97,13 +100,9 @@ Sou formado em Análise e Desenvolvimento de Sistemas e atualmente sou estagiár
           transition={{ duration: 0.8 }}
           className="mb-12 flex justify-center"
         >
-          <p className="text-gray-400 mb-12 max-w-3xl text-justify">
-          Front-end: Possuo experiência avançada com HTML e CSS, garantindo interfaces responsivas e bem estruturadas. Além disso, utilizo JavaScript para tornar as aplicações mais dinâmicas e interativas. Tenho conhecimentos básicos em React, o que me permite criar componentes reutilizáveis e escaláveis.
-
-Back-end: Desenvolvo aplicações utilizando PHP, linguagem na qual tenho experiência avançada. Também possuo conhecimentos em Laravel, que facilita a criação de sistemas robustos e bem estruturados. Além disso, já trabalhei com Node.js, ampliando minha capacidade de desenvolvimento para o lado do servidor.
-
-Criação de Aplicativos: Utilizo o FlutterFlow para desenvolver aplicativos móveis de forma eficiente, explorando a praticidade da ferramenta para criar experiências fluidas e intuitiva
-          </p>
+          <div className="text-gray-400 mb-12 max-w-4xl w-full mx-auto text-justify">
+  Tenho experiência prática com tecnologias essenciais do desenvolvimento web, como PHP, HTML5, CSS3 e JavaScript, além de frameworks e ferramentas como Laravel, React, Tailwind CSS, TypeScript e FlutterFlow. Também utilizo GitHub para controle de versão e colaboração em projetos. Essas habilidades me permitem criar aplicações web modernas, responsivas e bem estruturadas, oferecendo soluções eficientes e personalizadas para diferentes tipos de projetos, desde páginas simples até sistemas mais robustos.
+</div>
         </motion.div>
 
         <div className="grid grid-cols-3 md:grid-cols-9 gap-8 mb-20">

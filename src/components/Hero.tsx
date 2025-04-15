@@ -30,7 +30,7 @@ export default function Hero() {
           className="flex justify-center space-x-6 mb-12"
         >
           <motion.a
-            href="https://github.com/PedroDFinformatica?tab=repositories"
+            href="https://github.com/PedroDantas14"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             className="text-white hover:text-gray-300 transition-colors"
