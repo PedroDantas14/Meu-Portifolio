@@ -86,7 +86,7 @@ export default function About() {
               src={profileImage}
               alt="Pedro Henrique"
               className="rounded-lg w-full h-full object-cover"
-              style={{ height: '465px' }}
+              style={{ height: '465px', objectPosition: '50% 20%' }}
             />
           </motion.div>
         </div>
