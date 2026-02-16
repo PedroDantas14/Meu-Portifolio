@@ -4,25 +4,37 @@ import profileImage from '../assets/img/pedro.jpeg';
 
 interface Skill {
   name: string;
-  icon: string;
+  icon?: string;
 }
 
 interface SoftSkill {
   name: string;
 }
 
-const skills: Skill[] = [
+const frontEndSkills: Skill[] = [
   { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
   { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
   { name: "Javascript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
   { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "FlutterFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+];
+
+const backEndSkills: Skill[] = [
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+  { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
+  { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
   { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
   { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
-  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "FlutterFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
   { name: "NodeJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+  { name: "API REST" },
+];
+
+const databaseSkills: Skill[] = [
+  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
 ];
 
 const softSkills: SoftSkill[] = [
@@ -59,13 +71,8 @@ export default function About() {
             <h2 className="text-white text-3xl font-bold mb-6">
               Olá, me chamo Pedro Henrique
             </h2>
-            <p className="text-gray-400 mb-6 text-justify">
-            Sou desenvolvedor Full Stack com dois anos de experiência na área de tecnologia. Minha trajetória começou no suporte técnico, onde tive a oportunidade de desenvolver minhas habilidades e, com o tempo, evoluí para a programação.
-
-Sou formado em Análise e Desenvolvimento de Sistemas e atualmente sou estagiário na DF Informática, onde adquiri experiência prática com diversas linguagens e tecnologias. Sempre em busca de aprimoramento, estou estudando Java para expandir meus conhecimentos e continuar evoluindo na carreira.
-            </p>
             <p className="text-gray-400 text-justify">
-            Minha paixão pela tecnologia me motiva a aprender continuamente e a enfrentar novos desafios, sempre em busca de inovação e crescimento profissional.
+              Sou Desenvolvedor Fullstack com experiência no desenvolvimento e manutenção de aplicações web, mobile e sistemas corporativos. Atuo em todo o ciclo de vida dos projetos — desde o levantamento de requisitos e definição de arquitetura até a implantação e manutenção — sempre com foco em qualidade, escalabilidade, boas práticas e entrega de valor real ao negócio.
             </p>
           </motion.div>
           
@@ -101,27 +108,102 @@ Sou formado em Análise e Desenvolvimento de Sistemas e atualmente sou estagiár
           className="mb-12 flex justify-center"
         >
           <div className="text-gray-400 mb-12 max-w-4xl w-full mx-auto text-justify">
-  Tenho experiência prática com tecnologias essenciais do desenvolvimento web, como PHP, HTML5, CSS3 e JavaScript, além de frameworks e ferramentas como Laravel, React, Tailwind CSS, TypeScript e FlutterFlow. Também utilizo GitHub para controle de versão e colaboração em projetos. Essas habilidades me permitem criar aplicações web modernas, responsivas e bem estruturadas, oferecendo soluções eficientes e personalizadas para diferentes tipos de projetos, desde páginas simples até sistemas mais robustos.
-</div>
+            Minhas habilidades técnicas estão organizadas em três pilares: front-end, back-end e banco de dados. No front-end, atuo com HTML5, CSS3, JavaScript, TypeScript, React, Tailwind CSS e FlutterFlow para criar interfaces modernas e responsivas. No back-end, trabalho com Java, Kotlin, Spring Boot, PHP, Laravel, Node.js e APIs REST, integrando serviços e garantindo regras de negócio bem definidas. Para persistência de dados, utilizo bancos como MongoDB, MySQL e PostgreSQL, construindo aplicações escaláveis, seguras e bem estruturadas de ponta a ponta.
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-3 md:grid-cols-9 gap-8 mb-20">
-          {skills.map((skill) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, scale: 0.5 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center"
-            >
-              <img
-                src={skill.icon}
-                alt={skill.name}
-                className="w-16 h-16 mb-2"
-              />
-              <span className="text-white text-sm">{skill.name}</span>
-            </motion.div>
-          ))}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
+          >
+            <h4 className="text-white text-2xl font-semibold mb-4 text-center">
+              Front-end
+            </h4>
+            <div className="grid grid-cols-2 gap-4">
+              {frontEndSkills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center justify-center gap-2"
+                >
+                  {skill.icon && (
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-10 h-10"
+                    />
+                  )}
+                  <span className="text-white text-sm text-center">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
+          >
+            <h4 className="text-white text-2xl font-semibold mb-4 text-center">
+              Back-end
+            </h4>
+            <div className="grid grid-cols-2 gap-4">
+              {backEndSkills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className={`flex flex-col items-center justify-center gap-2 ${
+                    !skill.icon ? "col-span-2 mt-2" : ""
+                  }`}
+                >
+                  {skill.icon && (
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-10 h-10"
+                    />
+                  )}
+                  <span className="text-white text-sm text-center">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
+          >
+            <h4 className="text-white text-2xl font-semibold mb-4 text-center">
+              Banco de Dados
+            </h4>
+            <div className="grid grid-cols-2 gap-4">
+              {databaseSkills.map((skill) => (
+                <div
+                  key={skill.name}
+                  className="flex flex-col items-center justify-center gap-2"
+                >
+                  {skill.icon && (
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-10 h-10"
+                    />
+                  )}
+                  <span className="text-white text-sm text-center">
+                    {skill.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         <motion.div
