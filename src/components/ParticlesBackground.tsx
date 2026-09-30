@@ -3,6 +3,11 @@ import Particles from "react-particles";
 import type { Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 
+// Usuários com "reduzir movimento" ativado no sistema veem as partículas paradas
+const prefersReducedMotion =
+  typeof window !== "undefined" &&
+  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 export default function ParticlesBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
@@ -18,7 +23,7 @@ export default function ParticlesBackground() {
             value: "#000",
           },
         },
-        fpsLimit: 120,
+        fpsLimit: 60,
         interactivity: {
           events: {
             onClick: {
@@ -54,7 +59,7 @@ export default function ParticlesBackground() {
           },
           move: {
             direction: "none",
-            enable: true,
+            enable: !prefersReducedMotion,
             outModes: {
               default: "bounce",
             },
@@ -80,6 +85,24 @@ export default function ParticlesBackground() {
           },
         },
         detectRetina: true,
+        responsive: [
+          {
+            // Menos partículas e sem interação no celular, para economizar bateria e processamento
+            maxWidth: 768,
+            options: {
+              interactivity: {
+                events: {
+                  onClick: { enable: false },
+                  onHover: { enable: false },
+                },
+              },
+              particles: {
+                number: { value: 30 },
+                links: { distance: 120 },
+              },
+            },
+          },
+        ],
       }}
     />
   );

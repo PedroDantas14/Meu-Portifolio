@@ -1,51 +1,79 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import profileImage from '../assets/img/pedro.jpeg';
+import profileImage from '../assets/img/pedro.webp';
 
 interface Skill {
   name: string;
   icon?: string;
+  // Ícones escuros que somem no fundo preto (ex.: Next.js)
+  invert?: boolean;
 }
 
-interface SoftSkill {
-  name: string;
+interface SkillGroup {
+  title: string;
+  skills: Skill[];
 }
 
-const frontEndSkills: Skill[] = [
-  { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-  { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-  { name: "Javascript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-  { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
-  { name: "FlutterFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+const devicon = (path: string) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}.svg`;
+
+const skillGroups: SkillGroup[] = [
+  {
+    title: "Front-end",
+    skills: [
+      { name: "HTML5", icon: devicon("html5/html5-original") },
+      { name: "CSS3", icon: devicon("css3/css3-original") },
+      { name: "SCSS", icon: devicon("sass/sass-original") },
+      { name: "JavaScript", icon: devicon("javascript/javascript-original") },
+      { name: "TypeScript", icon: devicon("typescript/typescript-original") },
+      { name: "Angular", icon: devicon("angular/angular-original") },
+      { name: "React", icon: devicon("react/react-original") },
+      { name: "Next.js", icon: devicon("nextjs/nextjs-original"), invert: true },
+      { name: "Tailwind CSS", icon: devicon("tailwindcss/tailwindcss-original") },
+      { name: "FlutterFlow", icon: devicon("flutter/flutter-original") },
+    ],
+  },
+  {
+    title: "Back-end",
+    skills: [
+      { name: "Node.js", icon: devicon("nodejs/nodejs-original") },
+      { name: "Java", icon: devicon("java/java-original") },
+      { name: "Spring Boot", icon: devicon("spring/spring-original") },
+      { name: "PHP", icon: devicon("php/php-original") },
+      { name: "Laravel", icon: devicon("laravel/laravel-original") },
+      { name: "API REST" },
+    ],
+  },
+  {
+    title: "Mobile & Pagamentos",
+    skills: [
+      { name: "Kotlin", icon: devicon("kotlin/kotlin-original") },
+      { name: "Android", icon: devicon("android/android-original") },
+      { name: "Jetpack Compose", icon: devicon("jetpackcompose/jetpackcompose-original") },
+      { name: "Electron", icon: devicon("electron/electron-original") },
+      { name: "Terminais POS (Cielo, Rede, Stone)" },
+    ],
+  },
+  {
+    title: "Dados & Ferramentas",
+    skills: [
+      { name: "MongoDB", icon: devicon("mongodb/mongodb-original") },
+      { name: "MySQL", icon: devicon("mysql/mysql-original") },
+      { name: "PostgreSQL", icon: devicon("postgresql/postgresql-original") },
+      { name: "Firebase", icon: devicon("firebase/firebase-original") },
+      { name: "Git", icon: devicon("git/git-original") },
+    ],
+  },
 ];
 
-const backEndSkills: Skill[] = [
-  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-  { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" },
-  { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
-  { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
-  { name: "Laravel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
-  { name: "NodeJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-  { name: "API REST" },
-];
-
-const databaseSkills: Skill[] = [
-  { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-];
-
-const softSkills: SoftSkill[] = [
-  { name: "Comunicação" },
-  { name: "Colaboração" },
-  { name: "Resolução" },
-  { name: "Adaptabilidade" },
-  { name: "Pontualidade" },
-  { name: "Detalhismo" },
-  { name: "Crítica" },
-  { name: "Criatividade" },
+const softSkills = [
+  "Comunicação",
+  "Colaboração",
+  "Resolução de problemas",
+  "Adaptabilidade",
+  "Pontualidade",
+  "Atenção aos detalhes",
+  "Pensamento crítico",
+  "Criatividade",
 ];
 
 export default function About() {
@@ -59,7 +87,7 @@ export default function About() {
           className="text-center mb-20"
         >
           <h2 className="text-blue-500 text-xl mb-4">Conheça um pouco</h2>
-          <h3 className="text-white text-5xl font-bold">SOBRE MIM</h3>
+          <h3 className="text-white text-4xl md:text-5xl font-bold">SOBRE MIM</h3>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
@@ -71,11 +99,19 @@ export default function About() {
             <h2 className="text-white text-3xl font-bold mb-6">
               Olá, me chamo Pedro Henrique
             </h2>
+            <p className="text-gray-400 text-justify mb-4">
+              Sou Desenvolvedor Full Stack na Rius Tecnologia, onde desenvolvo e mantenho os sistemas
+              de gestão Venda+ e VenderGás com Angular, React, Node.js e TypeScript, integrações como a do
+              iFood com o Venda+ e aplicações em Kotlin para terminais de pagamento (POS) Cielo, Rede e Stone.
+              Antes, atuei por 2 anos na DF Informática com PHP, Laravel, React e FlutterFlow.
+            </p>
             <p className="text-gray-400 text-justify">
-              Sou Desenvolvedor Fullstack com experiência no desenvolvimento e manutenção de aplicações web, mobile e sistemas corporativos. Atuo em todo o ciclo de vida dos projetos — desde o levantamento de requisitos e definição de arquitetura até a implantação e manutenção — sempre com foco em qualidade, escalabilidade, boas práticas e entrega de valor real ao negócio.
+              Atuo em todo o ciclo de vida dos projetos, do levantamento de requisitos e definição de
+              arquitetura até a implantação e manutenção, com foco em qualidade, boas práticas e entrega
+              de valor real para o negócio.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +134,7 @@ export default function About() {
           className="text-center mb-12"
         >
           <h2 className="text-blue-500 text-xl mb-4">Conheça um pouco minhas</h2>
-          <h3 className="text-white text-5xl font-bold">HABILIDADES</h3>
+          <h3 className="text-white text-4xl md:text-5xl font-bold">HABILIDADES</h3>
         </motion.div>
 
         <motion.div
@@ -108,102 +144,50 @@ export default function About() {
           className="mb-12 flex justify-center"
         >
           <div className="text-gray-400 mb-12 max-w-4xl w-full mx-auto text-justify">
-            Minhas habilidades técnicas estão organizadas em três pilares: front-end, back-end e banco de dados. No front-end, atuo com HTML5, CSS3, JavaScript, TypeScript, React, Tailwind CSS e FlutterFlow para criar interfaces modernas e responsivas. No back-end, trabalho com Java, Kotlin, Spring Boot, PHP, Laravel, Node.js e APIs REST, integrando serviços e garantindo regras de negócio bem definidas. Para persistência de dados, utilizo bancos como MongoDB, MySQL e PostgreSQL, construindo aplicações escaláveis, seguras e bem estruturadas de ponta a ponta.
+            No front-end, desenvolvo interfaces modernas e responsivas com Angular, React, Next.js,
+            TypeScript, SCSS e Tailwind CSS. No back-end, construo APIs REST e regras de negócio com
+            Node.js, Java/Spring Boot e PHP/Laravel. No mobile, crio aplicações Android nativas em
+            Kotlin com Jetpack Compose para terminais de pagamento (POS) Cielo, Rede e Stone, além de apps
+            com FlutterFlow e aplicações desktop com Electron. Para dados e deploy, utilizo MongoDB, MySQL,
+            PostgreSQL, Firebase e Git/GitHub.
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-20">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
-          >
-            <h4 className="text-white text-2xl font-semibold mb-4 text-center">
-              Front-end
-            </h4>
-            <div className="grid grid-cols-2 gap-4">
-              {frontEndSkills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex flex-col items-center justify-center gap-2"
-                >
-                  {skill.icon && (
-                    <img
-                      src={skill.icon}
-                      alt={skill.name}
-                      className="w-10 h-10"
-                    />
-                  )}
-                  <span className="text-white text-sm text-center">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
-          >
-            <h4 className="text-white text-2xl font-semibold mb-4 text-center">
-              Back-end
-            </h4>
-            <div className="grid grid-cols-2 gap-4">
-              {backEndSkills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className={`flex flex-col items-center justify-center gap-2 ${
-                    !skill.icon ? "col-span-2 mt-2" : ""
-                  }`}
-                >
-                  {skill.icon && (
-                    <img
-                      src={skill.icon}
-                      alt={skill.name}
-                      className="w-10 h-10"
-                    />
-                  )}
-                  <span className="text-white text-sm text-center">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
-          >
-            <h4 className="text-white text-2xl font-semibold mb-4 text-center">
-              Banco de Dados
-            </h4>
-            <div className="grid grid-cols-2 gap-4">
-              {databaseSkills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex flex-col items-center justify-center gap-2"
-                >
-                  {skill.icon && (
-                    <img
-                      src={skill.icon}
-                      alt={skill.name}
-                      className="w-10 h-10"
-                    />
-                  )}
-                  <span className="text-white text-sm text-center">
-                    {skill.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-20">
+          {skillGroups.map((group, index) => (
+            <motion.div
+              key={group.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 + index * 0.1 }}
+              className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
+            >
+              <h4 className="text-white text-2xl font-semibold mb-4 text-center">
+                {group.title}
+              </h4>
+              <div className="grid grid-cols-2 gap-4">
+                {group.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className={`flex flex-col items-center justify-center gap-2 ${
+                      !skill.icon ? "col-span-2 mt-2" : ""
+                    }`}
+                  >
+                    {skill.icon && (
+                      <img
+                        src={skill.icon}
+                        alt={skill.name}
+                        className={`w-10 h-10 ${skill.invert ? "invert" : ""}`}
+                      />
+                    )}
+                    <span className="text-white text-sm text-center">
+                      {skill.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div
@@ -215,11 +199,11 @@ export default function About() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {softSkills.map((skill) => (
               <div
-                key={skill.name}
+                key={skill}
                 className="flex items-center text-gray-400"
               >
-                <ChevronDown className="text-blue-500 mr-2" />
-                <span>{skill.name}</span>
+                <ChevronDown className="text-blue-500 mr-2 shrink-0" />
+                <span>{skill}</span>
               </div>
             ))}
           </div>
