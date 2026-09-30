@@ -8,6 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Compensa o header fixo ao navegar pelas âncoras do menu */
+section[id] {
+  scroll-margin-top: 64px;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;

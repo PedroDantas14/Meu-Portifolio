@@ -1,222 +1,157 @@
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { Briefcase, CreditCard, FileDown, GraduationCap, MapPin, MessageCircle, Monitor, Webhook } from 'lucide-react';
 import profileImage from '../assets/img/pedro.webp';
+import { perfil } from '../data/perfil';
 
-interface Skill {
-  name: string;
-  icon?: string;
-  // Ícones escuros que somem no fundo preto (ex.: Next.js)
-  invert?: boolean;
-}
-
-interface SkillGroup {
-  title: string;
-  skills: Skill[];
-}
-
-const devicon = (path: string) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${path}.svg`;
-
-const skillGroups: SkillGroup[] = [
-  {
-    title: "Front-end",
-    skills: [
-      { name: "HTML5", icon: devicon("html5/html5-original") },
-      { name: "CSS3", icon: devicon("css3/css3-original") },
-      { name: "SCSS", icon: devicon("sass/sass-original") },
-      { name: "JavaScript", icon: devicon("javascript/javascript-original") },
-      { name: "TypeScript", icon: devicon("typescript/typescript-original") },
-      { name: "Angular", icon: devicon("angular/angular-original") },
-      { name: "React", icon: devicon("react/react-original") },
-      { name: "Next.js", icon: devicon("nextjs/nextjs-original"), invert: true },
-      { name: "Tailwind CSS", icon: devicon("tailwindcss/tailwindcss-original") },
-      { name: "FlutterFlow", icon: devicon("flutter/flutter-original") },
-    ],
-  },
-  {
-    title: "Back-end",
-    skills: [
-      { name: "Node.js", icon: devicon("nodejs/nodejs-original") },
-      { name: "Java", icon: devicon("java/java-original") },
-      { name: "Spring Boot", icon: devicon("spring/spring-original") },
-      { name: "PHP", icon: devicon("php/php-original") },
-      { name: "Laravel", icon: devicon("laravel/laravel-original") },
-      { name: "API REST" },
-    ],
-  },
-  {
-    title: "Mobile & Pagamentos",
-    skills: [
-      { name: "Kotlin", icon: devicon("kotlin/kotlin-original") },
-      { name: "Android", icon: devicon("android/android-original") },
-      { name: "Jetpack Compose", icon: devicon("jetpackcompose/jetpackcompose-original") },
-      { name: "Electron", icon: devicon("electron/electron-original") },
-      { name: "Terminais POS (Cielo, Rede, Stone)" },
-    ],
-  },
-  {
-    title: "Dados & Ferramentas",
-    skills: [
-      { name: "MongoDB", icon: devicon("mongodb/mongodb-original") },
-      { name: "MySQL", icon: devicon("mysql/mysql-original") },
-      { name: "PostgreSQL", icon: devicon("postgresql/postgresql-original") },
-      { name: "Firebase", icon: devicon("firebase/firebase-original") },
-      { name: "Git", icon: devicon("git/git-original") },
-    ],
-  },
+const stats = [
+  { value: "+3", label: "anos desenvolvendo software" },
+  { value: "2", label: "sistemas de gestão em produção" },
+  { value: "3", label: "adquirentes POS integradas" },
 ];
 
-const softSkills = [
-  "Comunicação",
-  "Colaboração",
-  "Resolução de problemas",
-  "Adaptabilidade",
-  "Pontualidade",
-  "Atenção aos detalhes",
-  "Pensamento crítico",
-  "Criatividade",
+const services = [
+  {
+    icon: Monitor,
+    title: "Sistemas web",
+    description: "Aplicações de gestão com Angular, React e Node.js, do front-end à API.",
+  },
+  {
+    icon: Webhook,
+    title: "Integrações & APIs",
+    description: "APIs REST e integrações com plataformas como iFood e meios de pagamento.",
+  },
+  {
+    icon: CreditCard,
+    title: "Terminais de pagamento",
+    description: "Aplicações Android em Kotlin para maquininhas Cielo, Rede e Stone.",
+  },
 ];
 
 export default function About() {
   return (
-    <section id="sobre" className="min-h-screen bg-black py-20">
+    <section id="sobre" className="bg-black py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <h2 className="text-blue-500 text-xl mb-4">Conheça um pouco</h2>
           <h3 className="text-white text-4xl md:text-5xl font-bold">SOBRE MIM</h3>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          {/* Foto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="relative w-full max-w-sm mx-auto"
           >
-            <h2 className="text-white text-3xl font-bold mb-6">
-              Olá, me chamo Pedro Henrique
-            </h2>
-            <p className="text-gray-400 text-justify mb-4">
-              Sou Desenvolvedor Full Stack na Rius Tecnologia, onde desenvolvo e mantenho os sistemas
-              de gestão Venda+ e VenderGás com Angular, React, Node.js e TypeScript, integrações como a do
-              iFood com o Venda+ e aplicações em Kotlin para terminais de pagamento (POS) Cielo, Rede e Stone.
-              Antes, atuei por 2 anos na DF Informática com PHP, Laravel, React e FlutterFlow.
-            </p>
-            <p className="text-gray-400 text-justify">
-              Atuo em todo o ciclo de vida dos projetos, do levantamento de requisitos e definição de
-              arquitetura até a implantação e manutenção, com foco em qualidade, boas práticas e entrega
-              de valor real para o negócio.
-            </p>
+            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-blue-500/40 via-blue-500/5 to-transparent blur-2xl" />
+            <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl border-2 border-blue-500/60" />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-zinc-800">
+              <img
+                src={profileImage}
+                alt="Pedro Henrique"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: '50% 20%' }}
+              />
+            </div>
+
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:-left-6 flex items-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/90 backdrop-blur px-4 py-3 shadow-xl whitespace-nowrap">
+              <span className="relative flex h-3 w-3">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
+              </span>
+              <div className="text-left">
+                <p className="text-white text-sm font-semibold">Atualmente na Rius Tecnologia</p>
+                <p className="text-zinc-400 text-xs">Desenvolvedor Full Stack</p>
+              </div>
+            </div>
           </motion.div>
 
+          {/* Texto */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative aspect-video"
+            className="mt-6 lg:mt-0"
           >
-            <img
-              src={profileImage}
-              alt="Pedro Henrique"
-              className="rounded-lg w-full h-full object-cover"
-              style={{ height: '465px', objectPosition: '50% 20%' }}
-            />
+            <h2 className="text-white text-3xl md:text-4xl font-bold mb-4">
+              Olá, me chamo <span className="text-blue-500">Pedro Henrique</span>
+            </h2>
+
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400 mb-6">
+              <span className="inline-flex items-center gap-2"><MapPin size={16} className="text-blue-500" />Brasília – DF</span>
+              <span className="inline-flex items-center gap-2"><Briefcase size={16} className="text-blue-500" />Rius Tecnologia</span>
+              <span className="inline-flex items-center gap-2"><GraduationCap size={16} className="text-blue-500" />Análise e Desenvolvimento de Sistemas</span>
+            </div>
+
+            <p className="text-gray-300 leading-relaxed mb-4">
+              Sou Desenvolvedor Full Stack e hoje desenvolvo e mantenho os sistemas de gestão
+              <strong className="text-white font-medium"> Venda+</strong> e
+              <strong className="text-white font-medium"> VenderGás</strong>, usados por empresas em todo o Brasil,
+              além de integrações como a do iFood e aplicações para terminais de pagamento.
+            </p>
+            <p className="text-gray-400 leading-relaxed mb-8">
+              Antes, atuei por 2 anos na DF Informática com PHP, Laravel, React e FlutterFlow. Gosto de
+              participar de todo o ciclo do projeto, do requisito ao deploy, com foco em qualidade e em
+              entregar valor real para o negócio.
+            </p>
+
+            <div className="grid grid-cols-3 gap-3 mb-8">
+              {stats.map(stat => (
+                <div key={stat.label} className="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4 text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-blue-500">{stat.value}</p>
+                  <p className="text-xs md:text-sm text-zinc-400 mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              {perfil.curriculo && (
+                <a
+                  href={perfil.curriculo}
+                  download
+                  className="inline-flex items-center justify-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-colors"
+                >
+                  <FileDown size={18} />
+                  Baixar currículo
+                </a>
+              )}
+              <a
+                href={perfil.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-zinc-600 text-white px-6 py-3 rounded-full hover:border-white transition-colors"
+              >
+                <MessageCircle size={18} />
+                Fale comigo
+              </a>
+            </div>
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-blue-500 text-xl mb-4">Conheça um pouco minhas</h2>
-          <h3 className="text-white text-4xl md:text-5xl font-bold">HABILIDADES</h3>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 flex justify-center"
-        >
-          <div className="text-gray-400 mb-12 max-w-4xl w-full mx-auto text-justify">
-            No front-end, desenvolvo interfaces modernas e responsivas com Angular, React, Next.js,
-            TypeScript, SCSS e Tailwind CSS. No back-end, construo APIs REST e regras de negócio com
-            Node.js, Java/Spring Boot e PHP/Laravel. No mobile, crio aplicações Android nativas em
-            Kotlin com Jetpack Compose para terminais de pagamento (POS) Cielo, Rede e Stone, além de apps
-            com FlutterFlow e aplicações desktop com Electron. Para dados e deploy, utilizo MongoDB, MySQL,
-            PostgreSQL, Firebase e Git/GitHub.
-          </div>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 mb-20">
-          {skillGroups.map((group, index) => (
+        {/* O que eu faço */}
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-20">
+          {services.map(({ icon: Icon, title, description }, index) => (
             <motion.div
-              key={group.title}
+              key={title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 + index * 0.1 }}
-              className="bg-zinc-900/60 rounded-xl p-6 shadow-lg border border-zinc-800"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/60"
             >
-              <h4 className="text-white text-2xl font-semibold mb-4 text-center">
-                {group.title}
-              </h4>
-              <div className="grid grid-cols-2 gap-4">
-                {group.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className={`flex flex-col items-center justify-center gap-2 ${
-                      !skill.icon ? "col-span-2 mt-2" : ""
-                    }`}
-                  >
-                    {skill.icon && (
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        className={`w-10 h-10 ${skill.invert ? "invert" : ""}`}
-                      />
-                    )}
-                    <span className="text-white text-sm text-center">
-                      {skill.name}
-                    </span>
-                  </div>
-                ))}
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 transition-colors group-hover:bg-blue-500 group-hover:text-white">
+                <Icon size={24} />
               </div>
+              <h4 className="text-white text-lg font-semibold mb-2">{title}</h4>
+              <p className="text-zinc-400 text-sm leading-relaxed">{description}</p>
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3 className="text-blue-500 text-2xl mb-8">Soft skills</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {softSkills.map((skill) => (
-              <div
-                key={skill}
-                className="flex items-center text-gray-400"
-              >
-                <ChevronDown className="text-blue-500 mr-2 shrink-0" />
-                <span>{skill}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex justify-center mt-20"
-        >
-          <ChevronDown size={48} className="text-blue-500 animate-bounce" />
-        </motion.div>
       </div>
     </section>
   );
